@@ -1,0 +1,47 @@
+project (DesignPattern2CalculatorProject) {
+
+    exename = Tree
+
+    Source_Files {
+        DesignPattern2Calculator.cpp
+        Expr_Tree_Builder.cpp
+        Expr_Tree_Evaluator.cpp
+        Binary_Op_Node.cpp
+        num_Node_P.cpp
+        add_Node_P.cpp
+        sub_Node_P.cpp
+        mul_Node_P.cpp
+        div_Node_P.cpp
+        mod_Node_P.cpp
+    }
+
+    Header_Files {
+        Basic_Array.h
+        Array.h
+        Stack.h
+        Queue.h
+        Expr_Builder.h
+        Expr_Tree_Builder.h
+        Expr_Node_Visitor.h
+        Expr_Tree_Evaluator.h
+        Expr_Node.h
+        Binary_Op_Node.h
+        num_Node_P.h
+        add_Node_P.h
+        sub_Node_P.h
+        mul_Node_P.h
+        div_Node_P.h
+        mod_Node_P.h
+    }
+
+    Template_Files {
+        Basic_Array.cpp
+        Array.cpp
+        Stack.cpp
+        Queue.cpp
+    }
+
+    specific (make) {
+        compile_flags += -std=c++11
+    }
+}
