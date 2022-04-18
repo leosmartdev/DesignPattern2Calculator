@@ -2,9 +2,9 @@
 //
 //  Author:         Ibrahim Sardar
 //  Class:          CSCI 363
-//  Filename:       Number_Node.h
+//  Filename:       div_Node_P.h
 //  Date:           11/20/2017
-//  Description:    Headers for Number_Node class.
+//  Description:    Headers for div_Node_P class.
 //
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -16,33 +16,35 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright (c) 2017 Copyright Holder All Rights Reserved.
+//  Copyright (c) 2017 Copyright Holder All seconds Reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _NUMBER_NODE_H_
-#define _NUMBER_NODE_H_
+#ifndef _DIVIDE_NODE_H_
+#define _DIVIDE_NODE_H_
 
-#include "Expression_Node.h"
+#include "Binary_Op_Node.h"
+#include "Expr_Node.h"
 
 /**
-*   @class Number_Node
+*   @class div_Node_P
 *
 *   An expression node that specifically represents
 *   operands
 */
-class Number_Node : public Expression_Node {
+class div_Node_P : public Binary_Op_Node {
 
     public:
         /// Default constructor
-        Number_Node(void);
+        div_Node_P(void);
 
         /**
         *   Initializing constructor
         *
-        *   @param[in]          number              integer value of this node
+        *   @param[in]          first                operand-node first of operator
+        *   @param[in]          second               operand-node second of operator
         */
-        Number_Node(int);
+        div_Node_P(Expr_Node *, Expr_Node *);
 
         // Ryan: You need to use the abstract Visitor here.
         // Fixed: Now using abstract visitor rather than the concrete visitor
@@ -52,25 +54,7 @@ class Number_Node : public Expression_Node {
         *
         *   @param[in]          visitor             expression node visitor
         */
-        void accept(Expression_Node_Visitor &);
-
-        /**
-        *   Returns the precedence of this binary operator
-        *
-        *   @return             number              integer value of this node
-        */
-        int get_number(void);
-
-        /**
-        *   Sets the precedence of this binary operator
-        *
-        *   @param[in]          number              integer value of this node
-        */
-        void set_number(int);
-
-    protected:
-        /// precedence of the binary operator in a typical expression
-        int number_;
+        void accept(Expr_Node_Visitor &);
 };
 
-#endif   // !defined _NUMBER_NODE_H_
+#endif   // !defined _DIVIDE_NODE_H_

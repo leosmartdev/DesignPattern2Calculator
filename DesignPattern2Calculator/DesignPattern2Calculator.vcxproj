@@ -151,37 +151,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Add_Node.cpp" />
-    <ClCompile Include="Binary_Operator_Node.cpp" />
-    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="add_Node_P.cpp" />
+    <ClCompile Include="Binary_Op_Node.cpp" />
     <ClCompile Include="DesignPattern2Calculator.cpp" />
-    <ClCompile Include="Divide_Node.cpp" />
-    <ClCompile Include="Expression_Tree_Builder.cpp" />
-    <ClCompile Include="Expression_Tree_Evaluator.cpp" />
-    <ClCompile Include="Modulo_Node.cpp" />
-    <ClCompile Include="Multiply_Node.cpp" />
-    <ClCompile Include="Number_Node.cpp" />
-    <ClCompile Include="Subtract_Node.cpp" />
+    <ClCompile Include="div_Node_P.cpp" />
+    <ClCompile Include="Expr_Tree_Builder.cpp" />
+    <ClCompile Include="Expr_Tree_Evaluator.cpp" />
+    <ClCompile Include="mod_Node_P.cpp" />
+    <ClCompile Include="mul_Node_P.cpp" />
+    <ClCompile Include="num_Node_P.cpp" />
+    <ClCompile Include="sub_Node_P.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Add_Node.h" />
+    <ClInclude Include="add_Node_P.h" />
     <ClInclude Include="Array.h" />
-    <ClInclude Include="Base_Array.h" />
     <ClInclude Include="Basic_Array.h" />
-    <ClInclude Include="Binary_Operator_Node.h" />
-    <ClInclude Include="Client.h" />
-    <ClInclude Include="Divide_Node.h" />
-    <ClInclude Include="Expression_Builder.h" />
-    <ClInclude Include="Expression_Node.h" />
-    <ClInclude Include="Expression_Node_Visitor.h" />
-    <ClInclude Include="Expression_Tree_Builder.h" />
-    <ClInclude Include="Expression_Tree_Evaluator.h" />
-    <ClInclude Include="Modulo_Node.h" />
-    <ClInclude Include="Multiply_Node.h" />
-    <ClInclude Include="Number_Node.h" />
+    <ClInclude Include="Binary_Op_Node.h" />
+    <ClInclude Include="div_Node_P.h" />
+    <ClInclude Include="Expr_Builder.h" />
+    <ClInclude Include="Expr_Node.h" />
+    <ClInclude Include="Expr_Node_Visitor.h" />
+    <ClInclude Include="Expr_Tree_Builder.h" />
+    <ClInclude Include="Expr_Tree_Evaluator.h" />
+    <ClInclude Include="mod_Node_P.h" />
+    <ClInclude Include="mul_Node_P.h" />
+    <ClInclude Include="num_Node_P.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
-    <ClInclude Include="Subtract_Node.h" />
+    <ClInclude Include="sub_Node_P.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

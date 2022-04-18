@@ -6,10 +6,9 @@
 #include "Array.h"
 #include "Stack.h"
 #include "Queue.h"
-#include "Expression_Node.h"
-#include "Expression_Tree_Builder.h"
-#include "Expression_Tree_Evaluator.h"
-#include "Client.h"
+#include "Expr_Node.h"
+#include "Expr_Tree_Builder.h"
+#include "Expr_Tree_Evaluator.h"
 
 using std::cout;
 using std::cin;
@@ -302,10 +301,10 @@ int main(int argc, char * argv[]) {
 	string exp;
 
 	// builder for infix_to_postfix
-    Expression_Tree_Builder builder;
+    Expr_Tree_Builder builder;
 
     // evaluator for expression tree
-    Expression_Tree_Evaluator evaluator;
+    Expr_Tree_Evaluator evaluator;
 
 	// menu - obtain user input expressions
 	cout << "\nWelcome to the Design Pattern Calculator!" << endl;
@@ -339,7 +338,7 @@ int main(int argc, char * argv[]) {
 				else {
 					// build and get expression tree from postfix queue
         			builder.build_expression(postfix);
-        			Expression_Node * tree = builder.get_expression();
+        			Expr_Node * tree = builder.get_expression();
 
 					int result = evaluator.evaluate(tree);
 					// print result

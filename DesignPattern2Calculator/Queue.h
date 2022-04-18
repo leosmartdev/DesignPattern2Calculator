@@ -1,25 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Author:         Ibrahim Sardar
-//  Class:          CSCI 363
-//  Filename:       Queue.h
-//  Date:           09/26/2017
-//  Description:    Headers for Queue class.
-//
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Honor Pledge:
-//
-//  I pledge that I have neither given nor received any help on this assignment.
-//
-//  ibsardar
-//
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Copyright (c) 2017 Copyright Holder All Rights Reserved.
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
 
@@ -35,8 +13,6 @@ template <typename T>
 class Queue {
 
 public:
-    /// Type definition of the type.
-    typedef T type;
 
     /**
      * @class empty_exception
@@ -61,31 +37,31 @@ public:
     /**
      * Assignment operator
      *
-     * @param[in]      rhs           Right-hand side of operator
-     * @return         Reference to self
+     * @param: rhs           second-hand side of operator
+     * @return: Reference to self
      */
     const Queue & operator = (const Queue & rhs);
 
     /**
      * Enqueues an element into the end of the queue.
      *
-     * @param[in]      element         element to add to the list
+     * @param: element         element to add to the list
      */
      void enqueue(T);
 
      /**
       * Dequeues an element from the beginning of the queue.
       *
-      * @exception      empty_exception    The queue is empty
-      * @return         element        element from the start of the list
+      * @exception: empty_exception    The queue is empty
+      * @return: element        element from the start of the list
       */
      T dequeue(void);
 
      /**
       * Test if the queue is empty.
       *
-      * @retval         true          The queue is empty
-      * @retval         false         The queue is not empty
+      * @retval: true          The queue is empty
+      * @retval: false         The queue is not empty
       */
      bool is_empty (void) const;
 
@@ -96,24 +72,21 @@ public:
       */
      uInt size (void) const;
 
-     /// Remove all elements from the queue.
+     // Remove all elements from the queue.
      void clear (void);
 
 private:
     // add member variable(s) here
 
-    /// Pointer to queue data stored in an Array
-    Array <T> * data_;
+    ///Pointer to queue data stored in an Array
+    Array <T> * _data;
 
-    /// Head index of current queue
-    int head_;
+    // Head index of current queue
+    int _head;
 
-    /// Tail index of current queue
-    int tail_;
+    // Tail index of current queue
+    int _tail;
 };
-
-// include the inline files
-#include "Queue.inl"
 
 // include the source file since template class
 #include "Queue.cpp"

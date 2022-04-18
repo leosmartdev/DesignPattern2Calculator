@@ -1,164 +1,114 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Author:         Ibrahim Sardar
-//  Class:          CSCI 363
-//  Filename:       Queue.cpp
-//  Date:           09/26/2017
-//  Description:    Main implementation for Queue class.
-//
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Honor Pledge:
-//
-//  I pledge that I have neither given nor received any help on this assignment.
-//
-//  ibsardar
-//
-////////////////////////////////////////////////////////////////////////////////
-//
-//  Copyright (c) 2017 Copyright Holder All Rights Reserved.
-//
-////////////////////////////////////////////////////////////////////////////////
-
-//
-// Queue - default constructor
-//
 template <typename T>
-Queue <T>::Queue (void) :
-        data_ (new Array <T>()),
-        head_ (0),
-        tail_ (-1) {
+inline
+uInt Queue <T>::size (void) const 
+{
+    // The difference between the head and tail + 1 will give the appropriate number of elements in the queue
+    return this->_tail - this->_head + 1;
+}
 
+// is_empty
+template <typename T>
+inline
+bool Queue <T>::is_empty (void) const
+{
+    // empty if head index has surpassed the tail
+    return this->_head > this->_tail;
+}
+
+// default constructor
+template <typename T>
+Queue <T>::Queue (void) : _data (new Array <T>()), _head (0), _tail (-1) 
+{
     //...
 }
 
-//
-// Queue - copy constructor
-//
+// copy constructor
 template <typename T>
-Queue <T>::Queue (const Queue & queue) :
-        data_ (new Array <T>()),
-        head_ (0),
-        tail_ (-1) {
-
-    // Ryan: We only need to copy the queue.data_ from one queue
-    // to the other here.
-    // Fixed: Properly copied over member variables by value.
-
+Queue <T>::Queue (const Queue & queue) : _data (new Array <T>()), _head (0), _tail (-1) 
+{
     // if self assignment, ignore
     if (this == &queue)
         return;
 
     // mimic data members of input stack (by value!)
-    *this->data_ = *queue.data_;
-    this->head_  =  queue.head_;
-    this->tail_  =  queue.tail_;
+    *this->_data = *queue._data;
+    this->_head  =  queue._head;
+    this->_tail  =  queue._tail;
 }
 
-//
 // ~Queue
-//
 template <typename T>
-Queue <T>::~Queue (void) {
-
-    // call Array destructor
-    delete this->data_;
+Queue <T>::~Queue (void) 
+{
+    delete this->_data;
 }
 
-//
 // operator =
-//
 template <typename T>
-const Queue <T> & Queue <T>::operator = (const Queue & rhs) {
-
+const Queue <T> & Queue <T>::operator = (const Queue & rhs) 
+{
     // check for self assignment
     if (this == &rhs) {
-
-        // return value this is pointing at
         return * this;
     }
 
     // mimic data members of input stack (by value!)
-    *this->data_ = *rhs.data_;
-    this->head_  =  rhs.head_;
-    this->tail_  =  rhs.tail_;
+    *this->_data = *rhs._data;
+    this->_head  =  rhs._head;
+    this->_tail  =  rhs._tail;
 
-    // return value this is pointing at
     return * this;
 }
 
-//
 // enqueue
-//
 template <typename T>
-void Queue <T>::enqueue(T element) {
-
-    //
-    //  Make space in the array:
-    //
+void Queue <T>::enqueue(T element) 
+{
 
     // if tail has reached end of array
-    if (this->tail_ + 1 >= this->data_->size()) {
+    if (this->_tail + 1 >= this->_data->size()) {
 
         // if head is 0 (i.e. queue is full)
-        if (this->head_ == 0) {
+        if (this->_head == 0) {
 
             // resize (1 larger than current size)
-            this->data_->resize(this->data_->size() + 1);
+            this->_data->resize(this->_data->size() + 1);
 
         // if head is > 0 (head is never < 0)
         } else {
 
-            // shift elements left where head is 0
-            int i = 0, j = this->head_;
-            for (; j <= this->tail_; i++, j++)
-                this->data_->set(i, this->data_->get(j));
+            // shift elements first where head is 0
+            int i = 0, j = this->_head;
+            for (; j <= this->_tail; i++, j++)
+                this->_data->set(i, this->_data->get(j));
 
             // re-adjust head and tail markers
-            this->head_ = 0;
-            this->tail_ = i - 1;
+            this->_head = 0;
+            this->_tail = i - 1;
         }
     }
 
-    //
-    //  Add element:
-    //
-
     // increment tail & add element
-    this->data_->set(++this->tail_, element);
+    this->_data->set(++this->_tail, element);
 }
 
-//
 // dequeue
-//
 template <typename T>
-T Queue <T>::dequeue() {
-
+T Queue <T>::dequeue() 
+{
     // exception if empty
     if (this->is_empty())
         throw Queue <T>::empty_exception();
 
     // increment head after returning element from front of array
-    return this->data_->get(this->head_++);
+    return this->_data->get(this->_head++);
 }
 
-//
 // clear
-//
 template <typename T>
-void Queue <T>::clear() {
-
-    // [Note]:  Don't free array memory; chances are the user will
-    //          want to put another n elements back into the queue,
-    //          and freeing then reallocating n elements every time
-    //          clear is called can have heavy impact on performance.
-
-    // Ryan: We still need to resize the underlying data structure.
-    // Fixed: I discussed this issue with Dr. Ryan and he allowed me
-    // to keep it this way as long as the 'clear' functionality works
-    // as expected.
-
+void Queue <T>::clear() 
+{
     // reset head, tail
-    this->head_ = 0;
-    this->tail_ = -1;
+    this->_head = 0;
+    this->_tail = -1;
 }

@@ -18,81 +18,72 @@
     <ClCompile Include="DesignPattern2Calculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Subtract_Node.cpp">
+    <ClCompile Include="sub_Node_P.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Number_Node.cpp">
+    <ClCompile Include="num_Node_P.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Multiply_Node.cpp">
+    <ClCompile Include="mul_Node_P.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Modulo_Node.cpp">
+    <ClCompile Include="mod_Node_P.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Expression_Tree_Evaluator.cpp">
+    <ClCompile Include="Expr_Tree_Evaluator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Expression_Tree_Builder.cpp">
+    <ClCompile Include="Expr_Tree_Builder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Divide_Node.cpp">
+    <ClCompile Include="div_Node_P.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Client.cpp">
+    <ClCompile Include="Binary_Op_Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Binary_Operator_Node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Add_Node.cpp">
+    <ClCompile Include="add_Node_P.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Add_Node.h">
+    <ClInclude Include="add_Node_P.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Base_Array.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Basic_Array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Binary_Operator_Node.h">
+    <ClInclude Include="Binary_Op_Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Client.h">
+    <ClInclude Include="div_Node_P.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Divide_Node.h">
+    <ClInclude Include="Expr_Builder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Expression_Builder.h">
+    <ClInclude Include="Expr_Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Expression_Node.h">
+    <ClInclude Include="Expr_Node_Visitor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Expression_Node_Visitor.h">
+    <ClInclude Include="Expr_Tree_Builder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Expression_Tree_Builder.h">
+    <ClInclude Include="Expr_Tree_Evaluator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Expression_Tree_Evaluator.h">
+    <ClInclude Include="mod_Node_P.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Modulo_Node.h">
+    <ClInclude Include="mul_Node_P.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Multiply_Node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Number_Node.h">
+    <ClInclude Include="num_Node_P.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Queue.h">
@@ -101,7 +92,7 @@
     <ClInclude Include="Stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Subtract_Node.h">
+    <ClInclude Include="sub_Node_P.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
