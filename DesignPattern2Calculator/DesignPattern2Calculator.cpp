@@ -196,6 +196,15 @@ bool is_valid(Array<string> & infix) {
 	return true;
 }
 
+// COMMENT You should move the priority to the nodes. The reasoning is because
+// you violate the DIP. If you want to add new operators to your calculator, then
+// you must update this method to understands its priority. Also, the concrete
+// builder should be handling the priority.
+
+// SOLUTION: 
+//
+// set _priority in Binary_Op_Node and use it in child node classes. 
+
 /**
 *   Returns operator priority to use for order-of-operations
 *   @param: std::string             some operator in string format
@@ -324,6 +333,14 @@ int main(int argc, char * argv[]) {
 
 		// enqueue valid expression, exception if invalid
 		if (is_valid(infix)) {
+
+			// COMMENT: Do not go from infix to postfix then to tree. Instead,
+			// go directly from infix to tree. The extra step is not necessary.
+
+			// SOLUTION: 
+			//
+			// It's to build function get expression tree from infix queue instead of postfix
+
 			// get postfix
 			Queue<string> postfix = infix_to_postfix(infix);
 
